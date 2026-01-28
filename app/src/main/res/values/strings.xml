@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Hinário</string>
+    <string name="titulo_lista">Meus Cadastros</string>
+    <string name="adicionar">Adicionar</string>
+    <string name="editar">Editar</string>
+    <string name="excluir">Excluir</string>
+    <string name="salvar">Salvar</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="codigo">Código</string>
+    <string name="titulo">Título</string>
+    <string name="texto">Texto</string>
+    <string name="campo_obrigatorio">Campo obrigatório</string>
+    <string name="cadastro_salvo">Cadastro salvo com sucesso!</string>
+    <string name="cadastro_excluido">Cadastro excluído com sucesso!</string>
+    <string name="lista_vazia">Nenhum cadastro ainda.\nClique no + para adicionar.</string>
+</resources>
