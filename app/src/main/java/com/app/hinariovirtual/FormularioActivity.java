@@ -8,9 +8,13 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.app.hinariovirtual.db.DatabaseHelper;
 import com.app.hinariovirtual.model.Hino;
+import com.google.android.material.appbar.MaterialToolbar;
 
 public class FormularioActivity extends AppCompatActivity {
 
@@ -29,7 +33,15 @@ public class FormularioActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_formulario);
+        View root = findViewById(android.R.id.content);
+        ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(0, systemBars.top, 0, systemBars.bottom);
+            return insets;
+        });
 
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         // Habilita botão de voltar na ActionBar
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -57,7 +69,7 @@ public class FormularioActivity extends AppCompatActivity {
         if (cadastroId != -1) {
             // Modo edição
             isEdicao = true;
-            setTitle("Editar Cadastro");
+            setTitle("Editar");
             btnExcluir.setVisibility(View.VISIBLE);
 
             cadastroAtual = dbHelper.buscarPorId(cadastroId);
@@ -70,7 +82,7 @@ public class FormularioActivity extends AppCompatActivity {
         } else {
             // Modo criação
             isEdicao = false;
-            setTitle("Novo Cadastro");
+            setTitle("Cadastrar");
             btnExcluir.setVisibility(View.GONE);
         }
     }
@@ -138,6 +150,7 @@ public class FormularioActivity extends AppCompatActivity {
         if (cadastroAtual != null) {
             dbHelper.remover(cadastroAtual.getId());
             Toast.makeText(this, "Cadastro excluído com sucesso!", Toast.LENGTH_SHORT).show();
+
             finish();
         }
     }

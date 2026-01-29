@@ -5,26 +5,25 @@
     app:cardElevation="2dp"
     app:cardCornerRadius="8dp"
     xmlns:android="http://schemas.android.com/apk/res/android">
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="30dp">
-
+        android:padding="20dp">
         <TextView
             android:id="@+id/textCodigo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="001"
+            style="@style/TextInput.App"
             android:textSize="20sp"
             android:layout_marginRight="30dp"
             android:textStyle="bold"/>
-
         <TextView
             android:id="@+id/textTitulo"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
+            style="@style/TextInput.App"
             android:text="Título do cadastro"
             android:textSize="20sp"
             android:ellipsize="end"

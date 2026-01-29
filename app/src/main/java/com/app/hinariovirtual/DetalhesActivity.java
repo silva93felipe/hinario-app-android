@@ -4,22 +4,23 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.Insets;
+import androidx.core.view.ViewCompat;
+import androidx.core.view.WindowInsetsCompat;
 
 import com.app.hinariovirtual.db.DatabaseHelper;
 import com.app.hinariovirtual.model.Hino;
+import com.google.android.material.appbar.MaterialToolbar;
 
 /**
  * Activity para exibir os detalhes completos de um cadastro
  */
 public class DetalhesActivity extends AppCompatActivity {
-
-    private TextView textCodigo;
-    private TextView textTitulo;
     private TextView textTexto;
-
     private DatabaseHelper dbHelper;
     private Hino cadastro;
 
@@ -27,7 +28,14 @@ public class DetalhesActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detalhes);
-
+        View root = findViewById(android.R.id.content);
+        ViewCompat.setOnApplyWindowInsetsListener(root, (v, insets) -> {
+            Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
+            v.setPadding(0, systemBars.top, 0, systemBars.bottom);
+            return insets;
+        });
+        MaterialToolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
         // Habilita botão de voltar
         if (getSupportActionBar() != null) {
             getSupportActionBar().setDisplayHomeAsUpEnabled(true);

@@ -3,33 +3,43 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_marginTop="100dp"
-    android:layout_marginBottom="50dp"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/black">
 
-    <LinearLayout
+    <!-- TOOLBAR -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/black">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@drawable/toolbar_divider"
+            app:titleTextColor="@color/white"/>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <!-- LISTA -->
+    <ListView
+        android:id="@+id/listViewCadastros"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginHorizontal="10dp"
-        android:orientation="vertical">
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
+        android:padding="10dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
-        <ListView
-            android:id="@+id/listViewCadastros"
-            android:layout_width="match_parent"
-            android:dividerHeight="10dp"
-            android:divider="@android:color/transparent"
-            android:layout_height="match_parent" />
-
-    </LinearLayout>
-
+    <!-- FAB -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdicionar"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
         android:layout_margin="16dp"
         android:contentDescription="Adicionar cadastro"
         app:srcCompat="@android:drawable/ic_input_add"
-        app:fabSize="normal"/>
-
+        app:layout_anchorGravity="bottom|end"
+        app:backgroundTint="@color/green"
+        android:tint="@color/white"
+        app:layout_anchor="@id/listViewCadastros"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
