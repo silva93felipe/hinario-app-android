@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black">
+
+    <!-- LISTA DE FAVORITOS -->
+    <ListView
+        android:id="@+id/listViewFavoritos"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:divider="@android:color/transparent"
+        android:dividerHeight="10dp"
+        android:padding="10dp"/>
+
+    <!-- TEXTO LISTA VAZIA -->
+    <TextView
+        android:id="@+id/textFavoritosVazio"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/lista_favoritos_vazia"
+        android:textColor="@color/white_soft"
+        android:textSize="16sp"
+        android:gravity="center"
+        android:visibility="gone"/>
+</FrameLayout>

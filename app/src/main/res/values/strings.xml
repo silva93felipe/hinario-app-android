@@ -14,4 +14,25 @@
     <string name="cadastro_salvo">Cadastro salvo com sucesso!</string>
     <string name="cadastro_excluido">Cadastro excluído com sucesso!</string>
     <string name="lista_vazia">Nenhum cadastro ainda.\nClique no + para adicionar.</string>
+
+    <!-- Tabs -->
+    <string name="tab_home">Home</string>
+    <string name="tab_favoritos">Favoritos</string>
+    <string name="tab_eventos">Eventos</string>
+
+    <!-- Favoritos -->
+    <string name="favorito_adicionado">Adicionado aos favoritos</string>
+    <string name="favorito_removido">Removido dos favoritos</string>
+    <string name="lista_favoritos_vazia">Nenhum hino favorito.\nFavorite hinos tocando no ♡</string>
+
+    <!-- Eventos -->
+    <string name="novo_evento">Novo Evento</string>
+    <string name="descricao_evento">Descrição do evento</string>
+    <string name="selecionar_hinos">Selecione os hinos</string>
+    <string name="evento_salvo">Evento salvo com sucesso!</string>
+    <string name="evento_excluido">Evento excluído com sucesso!</string>
+    <string name="lista_eventos_vazia">Nenhum evento cadastrado.\nClique no + para criar.</string>
+    <string name="nenhum_hino_cadastrado">Nenhum hino cadastrado.\nCadastre hinos na aba Home.</string>
+    <string name="selecione_pelo_menos_um">Selecione pelo menos um hino</string>
+    <string name="descricao_obrigatoria">Descrição é obrigatória</string>
 </resources>

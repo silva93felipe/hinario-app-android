@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    style="@style/Card.App">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- CABEÇALHO DO EVENTO -->
+        <LinearLayout
+            android:id="@+id/layoutEventoHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="16dp"
+            android:gravity="center_vertical">
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_event"
+                android:tint="@color/green"
+                android:layout_marginEnd="12dp"
+                android:contentDescription="Evento"/>
+
+            <TextView
+                android:id="@+id/textEventoDescricao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"
+                android:maxLines="2"
+                android:ellipsize="end"/>
+
+            <!-- BOTÃO EXCLUIR -->
+            <ImageView
+                android:id="@+id/btnExcluirEvento"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:src="@drawable/ic_delete"
+                android:tint="@color/red"
+                android:padding="4dp"
+                android:layout_marginEnd="4dp"
+                android:contentDescription="Excluir evento"
+                android:background="?attr/selectableItemBackgroundBorderless"/>
+
+            <!-- ÍCONE EXPANDIR -->
+            <ImageView
+                android:id="@+id/iconExpandir"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_expand_more"
+                android:tint="@color/white_soft"
+                android:contentDescription="Expandir"/>
+        </LinearLayout>
+
+        <!-- LISTA DE HINOS DO EVENTO (inicialmente oculta) -->
+        <LinearLayout
+            android:id="@+id/layoutHinosEvento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:visibility="gone"
+            android:paddingStart="16dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="12dp">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/white_soft"
+                android:layout_marginBottom="8dp"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</com.google.android.material.card.MaterialCardView>

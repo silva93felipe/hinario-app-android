@@ -45,4 +45,16 @@
         <item name="hintTextColor">@color/white_soft</item>
         <item name="boxStrokeColor">@color/white_soft</item>
     </style>
+
+    <!-- Bottom Navigation -->
+    <style name="BottomNav.App" parent="Widget.MaterialComponents.BottomNavigationView">
+        <item name="android:background">@color/black_soft</item>
+        <item name="itemIconTint">@color/bottom_nav_colors</item>
+        <item name="itemTextColor">@color/bottom_nav_colors</item>
+        <item name="itemActiveIndicatorStyle">@style/BottomNavIndicator.App</item>
+    </style>
+
+    <style name="BottomNavIndicator.App" parent="Widget.Material3.BottomNavigationView.ActiveIndicator">
+        <item name="android:color">@color/gray</item>
+    </style>
 </resources>

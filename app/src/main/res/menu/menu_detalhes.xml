@@ -2,6 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
     <item
+        android:id="@+id/action_favorito"
+        android:title="Favoritar"
+        android:icon="@drawable/ic_favorite_border"
+        app:iconTint="@color/white"
+        app:showAsAction="ifRoom"/>
+    <item
         android:id="@+id/action_editar"
         android:title="Editar"
         android:icon="@drawable/baseline_edit_24"

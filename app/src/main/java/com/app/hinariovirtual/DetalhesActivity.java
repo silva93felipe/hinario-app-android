@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
@@ -59,6 +60,8 @@ public class DetalhesActivity extends AppCompatActivity {
             if (cadastro != null) {
                 textTexto.setText(cadastro.getTexto());
                 setTitle(cadastro.getTitulo());
+                // Atualiza o menu de favorito
+                invalidateOptionsMenu();
             }
         }
     }
@@ -66,6 +69,17 @@ public class DetalhesActivity extends AppCompatActivity {
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.menu_detalhes, menu);
+        // Atualiza ícone de favorito
+        if (cadastro != null) {
+            MenuItem favItem = menu.findItem(R.id.action_favorito);
+            if (cadastro.isFavorito()) {
+                favItem.setIcon(R.drawable.ic_favorite);
+                favItem.setTitle("Remover favorito");
+            } else {
+                favItem.setIcon(R.drawable.ic_favorite_border);
+                favItem.setTitle("Favoritar");
+            }
+        }
         return true;
     }
 
@@ -73,6 +87,18 @@ public class DetalhesActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         if (item.getItemId() == android.R.id.home) {
             finish();
+            return true;
+        } else if (item.getItemId() == R.id.action_favorito) {
+            if (cadastro != null) {
+                dbHelper.toggleFavorito(cadastro.getId());
+                cadastro.setFavorito(!cadastro.isFavorito());
+                invalidateOptionsMenu();
+                if (cadastro.isFavorito()) {
+                    Toast.makeText(this, R.string.favorito_adicionado, Toast.LENGTH_SHORT).show();
+                } else {
+                    Toast.makeText(this, R.string.favorito_removido, Toast.LENGTH_SHORT).show();
+                }
+            }
             return true;
         } else if (item.getItemId() == R.id.action_editar) {
             // Abre tela de edição

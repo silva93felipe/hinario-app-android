@@ -12,4 +12,11 @@
     <color name="green">#2E7D32</color>
     <color name="red">#C62828</color>
     <color name="gray">#616161</color>
+
+    <!-- Favorito -->
+    <color name="favorite_active">#FFD600</color>
+
+    <!-- Bottom Nav -->
+    <color name="nav_item_active">#FFFFFF</color>
+    <color name="nav_item_inactive">#80FFFFFF</color>
 </resources>

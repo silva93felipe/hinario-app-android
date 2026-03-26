@@ -8,6 +8,7 @@ public class Hino implements Comparable<Hino> {
     private String codigo;
     private String titulo;
     private String texto;
+    private boolean favorito;
 
     public Hino() {
     }
@@ -23,6 +24,15 @@ public class Hino implements Comparable<Hino> {
         this.codigo = codigo;
         this.titulo = titulo;
         this.texto = texto;
+        this.favorito = false;
+    }
+
+    public Hino(int id, String codigo, String titulo, String texto, boolean favorito) {
+        this.id = id;
+        this.codigo = codigo;
+        this.titulo = titulo;
+        this.texto = texto;
+        this.favorito = favorito;
     }
 
     // Getters e Setters
@@ -56,6 +66,14 @@ public class Hino implements Comparable<Hino> {
 
     public void setTexto(String texto) {
         this.texto = texto;
+    }
+
+    public boolean isFavorito() {
+        return favorito;
+    }
+
+    public void setFavorito(boolean favorito) {
+        this.favorito = favorito;
     }
 
     @Override

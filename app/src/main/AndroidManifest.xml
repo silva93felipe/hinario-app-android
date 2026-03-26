@@ -29,6 +29,11 @@
             android:label="Detalhes"
             android:parentActivityName=".MainActivity" />
 
+        <activity
+            android:name=".FormularioEventoActivity"
+            android:label="Novo Evento"
+            android:parentActivityName=".MainActivity" />
+
     </application>
 
 </manifest>
