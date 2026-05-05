@@ -29,7 +29,6 @@
         android:gravity="center"
         android:visibility="gone"/>
 
-    <!-- FAB -->
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fabAdicionarEvento"
         android:layout_width="wrap_content"
@@ -40,5 +39,5 @@
         app:layout_anchorGravity="bottom|end"
         app:backgroundTint="@color/green"
         android:tint="@color/white"
-        app:layout_anchor="@id/listViewEventos"/>
+        android:layout_gravity="bottom|end"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

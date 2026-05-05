@@ -14,6 +14,7 @@
     <string name="cadastro_salvo">Cadastro salvo com sucesso!</string>
     <string name="cadastro_excluido">Cadastro excluído com sucesso!</string>
     <string name="lista_vazia">Nenhum cadastro ainda.\nClique no + para adicionar.</string>
+    <string name="search">Pesquisar</string>
 
     <!-- Tabs -->
     <string name="tab_home">Home</string>

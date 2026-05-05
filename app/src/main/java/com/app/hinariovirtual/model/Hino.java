@@ -78,8 +78,10 @@ public class Hino implements Comparable<Hino> {
 
     @Override
     public int compareTo(Hino outro) {
-        // Ordenação por código
-        return this.codigo.compareTo(outro.codigo);
+        return Integer.compare(
+                Integer.parseInt(this.codigo),
+                Integer.parseInt(outro.codigo)
+        );
     }
 
     @Override

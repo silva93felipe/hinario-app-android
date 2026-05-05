@@ -61,7 +61,7 @@ public class HinoAdapter extends ArrayAdapter<Hino> {
         // Atualiza ícone de favorito
         if (cadastro.isFavorito()) {
             holder.iconFavorito.setImageResource(R.drawable.ic_favorite);
-            holder.iconFavorito.setColorFilter(context.getResources().getColor(R.color.favorite_active));
+            holder.iconFavorito.setColorFilter(context.getResources().getColor(R.color.red));
         } else {
             holder.iconFavorito.setImageResource(R.drawable.ic_favorite_border);
             holder.iconFavorito.setColorFilter(context.getResources().getColor(R.color.white_soft));

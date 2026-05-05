@@ -4,20 +4,36 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="10dp"
     android:background="@color/black">
 
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/TextInput.App"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/search">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editPesquisa"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1"/>
+    </com.google.android.material.textfield.TextInputLayout>
     <!-- LISTA DE HINOS -->
+
+    <!-- TEXTO LISTA VAZIA -->
+
     <ListView
         android:id="@+id/listViewHinos"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
         android:divider="@android:color/transparent"
         android:dividerHeight="10dp"
-        android:padding="10dp"
-        android:clipToPadding="false"
-        android:paddingBottom="80dp"/>
+        android:layout_marginTop="70dp"
+        android:paddingBottom="80dp" />
 
-    <!-- TEXTO LISTA VAZIA -->
     <TextView
         android:id="@+id/textListaVazia"
         android:layout_width="wrap_content"
@@ -40,5 +56,5 @@
         app:layout_anchorGravity="bottom|end"
         app:backgroundTint="@color/green"
         android:tint="@color/white"
-        app:layout_anchor="@id/listViewHinos"/>
+        android:layout_gravity="bottom|end"/>
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

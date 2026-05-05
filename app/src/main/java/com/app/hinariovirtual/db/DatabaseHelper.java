@@ -160,7 +160,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         List<Hino> listaHino = new ArrayList<>();
 
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_HINO, null);
+        Cursor cursor = db.rawQuery("SELECT * FROM " + TABLE_HINO + " ORDER BY codigo + 0 ASC;", null);
 
         if (cursor.moveToFirst()) {
             do {
